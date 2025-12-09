@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "odaat1991-glitch.github.io/quartz",
     ignorePatterns: ["private", "templates", ".obsidian", "00_Inbox", "00_Private"],
     defaultDateType: "modified",
     theme: {
