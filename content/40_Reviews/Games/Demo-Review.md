@@ -1,7 +1,10 @@
 ---
 title: "Demo Game Review: The Placeholder"
-date: 2023-10-27
-tags: [review, game, demo]
+date: 2025-12-09
+tags:
+  - review
+  - game
+  - demo
 type: Game
 rating: ⭐⭐⭐⭐⭐
 cover: https://placehold.co/600x400

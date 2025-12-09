@@ -1,8 +1,12 @@
 ---
 title: Demo Gallery
-date: 2023-10-27
-tags: [model, art, demo]
-cssclasses: [gallery-layout]
+date: 2025-12-09
+tags:
+  - model
+  - art
+  - demo
+cssclasses:
+  - gallery-layout
 ---
 
 ## Masonry Grid Test

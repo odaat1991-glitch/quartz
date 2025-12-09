@@ -40,9 +40,10 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-      title: "Navigation",
-      folderClickBehavior: "link",
-      folderDefaultState: "open",
+      mapFn: (node) => {
+        // strip numeric prefixes (e.g. 10_) and replace underscores with spaces
+        node.displayName = node.displayName.replace(/^\d+_/, "").replace(/_/g, " ")
+      },
     }),
   ],
   right: [
@@ -68,9 +69,10 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
-      title: "Navigation",
-      folderClickBehavior: "link",
-      folderDefaultState: "open",
+      mapFn: (node) => {
+        // strip numeric prefixes (e.g. 10_) and replace underscores with spaces
+        node.displayName = node.displayName.replace(/^\d+_/, "").replace(/_/g, " ")
+      },
     }),
   ],
   right: [],
