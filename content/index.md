@@ -1,0 +1,1 @@
+Welcome to my Digital Garden. This is my first attempt of trying to organize my thoughts into a working website. Please be patient and lets have fun! :3

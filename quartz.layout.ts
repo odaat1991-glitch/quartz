@@ -21,6 +21,7 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
+    Component.ReviewCard(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -38,7 +39,11 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      title: "Navigation",
+      folderClickBehavior: "link",
+      folderDefaultState: "open",
+    }),
   ],
   right: [
     Component.Graph(),
@@ -62,7 +67,11 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      title: "Navigation",
+      folderClickBehavior: "link",
+      folderDefaultState: "open",
+    }),
   ],
   right: [],
 }
