@@ -9,7 +9,7 @@ cssclasses:
 ---
 
 
-# Garfield Park Observatory Photos
+# Nature
 
 Here is a collection of photos from the Garfield Park Observatory.
 * ![](20220306_110816.jpg)
