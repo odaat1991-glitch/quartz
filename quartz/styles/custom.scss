@@ -14,14 +14,31 @@
 }
 
 // --- 2. MASONRY GALLERY (For 20_Studio & 30_Life) ---
-// Turns image lists into a beautiful grid
+// Turns image lists into a beautiful grid with robust Markdown handling
 .gallery-layout {
-    article {
-        /* Creates the Masonry columns */
+
+    // 1. NEUTRALIZE LISTS
+    // If Markdown renders as a list, kill the bullets and defaults
+    ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    li {
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    // 2. MASONRY LAYOUT
+    // Apply columns to Article or UL (wherever the content lives)
+    article,
+    ul {
         column-count: 3;
         column-gap: 1em;
 
-        /* Responsive: 2 columns on tablets, 1 on mobile */
+        // Responsive breakpoints
         @media (max-width: 800px) {
             column-count: 2;
         }
@@ -29,19 +46,23 @@
         @media (max-width: 500px) {
             column-count: 1;
         }
+    }
 
-        /* Ensure the paragraph tags containing images don't get split */
-        p {
-            break-inside: avoid;
-            margin-bottom: 1em;
-            /* Spacing between grid items */
+    // 3. ITEM INTEGRITY
+    // Prevent splitting for paragraphs or list items
+    p,
+    li {
+        break-inside: avoid;
+        margin-bottom: 1em;
 
-            /* Force images to fill the column width */
-            img {
-                width: 100%;
-                display: block;
-                border-radius: 8px;
-                /* Optional styling */
+        img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: scale(1.02);
             }
         }
     }
