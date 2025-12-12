@@ -1,10 +1,13 @@
 ---
 title: Garfield Park Observatory
-date: 2025-12-11
+date: 2022-03-06
 tags:
   - photography
   - studio
+cssclasses:
+  - gallery-layout
 ---
+
 
 # Garfield Park Observatory Photos
 
