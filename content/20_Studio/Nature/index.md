@@ -1,5 +1,5 @@
 ---
-title: Garfield Park Observatory
+title: Nature
 date: 2022-03-06
 tags:
   - photography
