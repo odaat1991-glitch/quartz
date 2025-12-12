@@ -1,10 +1,10 @@
 ---
-title: Demo Gallery
-date: 2025-12-09
+title: Garfield Park Observatory
+date: 2022-03-06
 tags:
-  - model
+  - nature
   - art
-  - demo
+  - Chicago
 cssclasses:
   - gallery-layout
 ---
