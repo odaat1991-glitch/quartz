@@ -1,11 +1,12 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+import { pathToRoot } from "../util/path"
 
 // This component reads the frontmatter of a file. 
 // If it detects 'rating' and 'cover', it renders a special header card.
 // If not, it returns null (does nothing).
 
-const ReviewCard: QuartzComponentConstructor = (opts?: any) => {
+const ReviewCard: QuartzComponentConstructor = () => {
     function ReviewCardComponent({ fileData, displayClass }: QuartzComponentProps) {
         const fm = fileData.frontmatter
 
@@ -15,10 +16,24 @@ const ReviewCard: QuartzComponentConstructor = (opts?: any) => {
         }
 
         // 2. Data Extraction
-        const title = fm.title
-        const cover = fm.cover ? `../../${fm.cover}` : null // Resolves relative path
-        const rating = fm.rating // e.g., "⭐⭐⭐⭐⭐" or 5
-        const type = fm.type || "Review" // e.g., "Game", "Manga"
+        const title = (fm.title as string) ?? "Untitled"
+        const coverValue = fm.cover as string | undefined
+
+        // Resolve cover path relative to the root
+        let cover: string | undefined = undefined
+        if (coverValue) {
+            if (coverValue.startsWith('http')) {
+                cover = coverValue
+            } else {
+                const root = fileData.slug ? pathToRoot(fileData.slug) : "."
+                const dir = fileData.slug ? fileData.slug.split('/').slice(0, -1).join('/') : ''
+                const pathWithDir = coverValue.startsWith('/') ? coverValue : (dir ? `${dir}/${coverValue}` : coverValue)
+                cover = `${root}/${pathWithDir}`
+            }
+        }
+
+        const rating = fm.rating as string
+        const type = (fm.type as string) || "Review"
 
         // 3. Render
         return (
